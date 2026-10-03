@@ -181,18 +181,18 @@ a {
 }
 
 /* =========================================
-   ВКЛАДКИ В ШАПКЕ HERO
+   ВКЛАДКИ — ПОД ОСНОВНЫМ ТЕКСТОМ
 ========================================= */
-
 
 .hero-tabs {
     position: absolute;
 
     left: 60px;
     right: 60px;
-    bottom: 0;
 
-    z-index: 6;
+    bottom: 90px;
+
+    z-index: 5;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -206,7 +206,6 @@ a {
     padding: 20px 20px 18px 0;
 
     color: #fff;
-
     text-decoration: none;
 
     opacity: 0.6;
@@ -217,10 +216,6 @@ a {
         opacity 0.3s ease,
         border-color 0.3s ease,
         padding-left 0.3s ease;
-}
-
-.hero-tab:not(:last-child) {
-    border-right: 1px solid rgba(255,255,255,0.2);
 }
 
 .hero-tab:hover {
@@ -370,7 +365,7 @@ a {
 }
 
 /* =========================================
-   СТАТИСТИКА В HERO
+   СТАТИСТИКА — ПОД ВКЛАДКАМИ
 ========================================= */
 
 .hero-stats {
@@ -378,14 +373,15 @@ a {
 
     left: 60px;
     right: 60px;
-    bottom: 115px;
+
+    bottom: 0;
 
     z-index: 5;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    border-bottom: 1px solid rgba(255,255,255,0.35);
+    border-top: 1px solid rgba(255,255,255,0.25);
 }
 
 .hero-stat {
@@ -397,7 +393,7 @@ a {
 
     gap: 10px;
 
-    padding: 0 30px 22px;
+    padding: 18px 30px;
 
     color: #fff;
 }
@@ -408,8 +404,8 @@ a {
     position: absolute;
 
     right: 0;
-    top: 5px;
-    bottom: 22px;
+    top: 10px;
+    bottom: 10px;
 
     width: 1px;
 
@@ -417,7 +413,7 @@ a {
 }
 
 .hero-stat strong {
-    font-size: clamp(36px, 4vw, 54px);
+    font-size: clamp(32px, 4vw, 50px);
 
     line-height: 1;
 
@@ -433,11 +429,8 @@ a {
 
     text-transform: uppercase;
 
-    letter-spacing: 1.2px;
-
-    white-space: nowrap;
+    letter-spacing: 1px;
 }
-
 
 /* =========================================
    МОБИЛЬНАЯ ВЕРСИЯ
