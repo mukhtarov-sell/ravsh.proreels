@@ -378,29 +378,48 @@ a {
 
     left: 60px;
     right: 60px;
-    bottom: 135px;
+
+    bottom: 105px;
 
     z-index: 5;
 
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    padding-bottom: 22px;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    border-bottom: 1px solid rgba(255,255,255,0.35);
 }
 
 .hero-stat {
+    position: relative;
+
     display: flex;
     align-items: baseline;
+    justify-content: center;
+
     gap: 10px;
+
+    padding: 0 30px 22px;
 
     color: #fff;
 }
 
+.hero-stat:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 5px;
+    bottom: 22px;
+
+    width: 1px;
+
+    background: rgba(255,255,255,0.25);
+}
+
 .hero-stat strong {
-    font-size: clamp(34px, 4vw, 52px);
+    font-size: clamp(36px, 4vw, 54px);
+
     line-height: 1;
 
     font-weight: 400;
@@ -409,13 +428,15 @@ a {
 }
 
 .hero-stat span {
-    font-size: 12px;
+    font-size: 11px;
 
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255,255,255,0.65);
 
     text-transform: uppercase;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
+
+    white-space: nowrap;
 }
 
 
