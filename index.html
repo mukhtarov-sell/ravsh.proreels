@@ -36,9 +36,19 @@
 
     <!-- HERO -->
 
-   <section class="hero">
+   ```html
+<section class="hero">
 
-    <div class="hero-text">
+    <!-- Фоновое видео -->
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="./videos/intro.mp4" type="video/mp4">
+    </video>
+
+    <!-- Затемнение поверх видео -->
+    <div class="hero-overlay"></div>
+
+    <!-- Текст поверх видео -->
+    <div class="hero-content">
 
         <p class="eyebrow">
             CREATOR / VIDEOGRAPHER
@@ -60,13 +70,8 @@
 
     </div>
 
-    <div class="hero-image">
-        <video autoplay muted loop playsinline>
-            <source src="./videos/intro.mp4" type="video/mp4">
-        </video>
-    </div>
-
 </section>
+
 
     <!-- WORKS -->
 
