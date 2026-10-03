@@ -37,15 +37,60 @@
 
 <section class="hero">
 
-    <!-- Главное видео -->
-    <video class="hero-video" autoplay muted loop playsinline>
+    <!-- ВИДЕО 1 — ПО УМОЛЧАНИЮ -->
+    <video
+        class="hero-video hero-video-1 active"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
         <source src="./videos/intro.mp4" type="video/mp4">
     </video>
 
-    <!-- Затемнение -->
+
+    <!-- ВИДЕО 2 — БРЕНДЫ -->
+    <video
+        class="hero-video hero-video-2"
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="./videos/brands.mp4" type="video/mp4">
+    </video>
+
+
+    <!-- ВИДЕО 3 — ЛЮДИ -->
+    <video
+        class="hero-video hero-video-3"
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="./videos/people.mp4" type="video/mp4">
+    </video>
+
+
+    <!-- ВИДЕО 4 — СОБЫТИЯ -->
+    <video
+        class="hero-video hero-video-4"
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="./videos/events.mp4" type="video/mp4">
+    </video>
+
+
+    <!-- ЗАТЕМНЕНИЕ -->
     <div class="hero-overlay"></div>
 
-    <!-- Контент -->
+
+    <!-- ТЕКСТ -->
     <div class="hero-content">
 
         <p class="eyebrow">
@@ -73,25 +118,54 @@
 
     <div class="hero-tabs">
 
-        <a href="#works" class="hero-tab">
-            <span class="tab-title">Бренды</span>
-            <span class="tab-description">Reels и реклама</span>
+        <a
+            href="#works"
+            class="hero-tab active"
+            data-video="1"
+        >
+            <span class="tab-title">
+                Бренды
+            </span>
+
+            <span class="tab-description">
+                Reels и реклама
+            </span>
         </a>
 
-        <a href="#works" class="hero-tab">
-            <span class="tab-title">Люди</span>
-            <span class="tab-description">Эксперты и блогеры</span>
+
+        <a
+            href="#works"
+            class="hero-tab"
+            data-video="2"
+        >
+            <span class="tab-title">
+                Люди
+            </span>
+
+            <span class="tab-description">
+                Эксперты и блогеры
+            </span>
         </a>
 
-        <a href="#works" class="hero-tab">
-            <span class="tab-title">События</span>
-            <span class="tab-description">Свадьбы и мероприятия</span>
+
+        <a
+            href="#works"
+            class="hero-tab"
+            data-video="3"
+        >
+            <span class="tab-title">
+                События
+            </span>
+
+            <span class="tab-description">
+                Съёмки и мероприятия
+            </span>
         </a>
 
     </div>
 
 </section>
-
+    
     <!-- SERVICES -->
 
     <section class="section services">
