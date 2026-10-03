@@ -371,6 +371,82 @@ a {
     font-size: 13px;
 }
 
+/* =========================================
+   СТАТИСТИКА В HERO
+========================================= */
+
+.hero-stats {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 145px;
+    z-index: 5;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.hero-stat {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+
+    color: #fff;
+}
+
+.hero-stat strong {
+    font-size: clamp(32px, 4vw, 52px);
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: -2px;
+}
+
+.hero-stat span {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   МОБИЛЬНАЯ ВЕРСИЯ
+========================================= */
+
+@media (max-width: 700px) {
+
+    .hero-stats {
+        left: 20px;
+        right: 20px;
+        bottom: 230px;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+
+        padding-bottom: 20px;
+    }
+
+    .hero-stat {
+        gap: 6px;
+        flex-direction: column;
+    }
+
+    .hero-stat strong {
+        font-size: 34px;
+    }
+
+    .hero-stat span {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+}
 
 /* SERVICES */
 
