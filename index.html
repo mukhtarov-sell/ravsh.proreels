@@ -490,18 +490,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Все видео */
 
-    const videos = {
-
-        intro: document.querySelector('.hero-video-1'),
-
-        brands: document.querySelector('.hero-video-2'),
-
-        people: document.querySelector('.hero-video-3'),
-
-        events: document.querySelector('.hero-video-4')
-
-    };
-
+   const videos = {
+    intro: document.querySelector('.hero-video-1'),
+    reels: document.querySelector('.hero-video-2'),
+    people: document.querySelector('.hero-video-3'),
+    events: document.querySelector('.hero-video-4'),
+    snippet: document.querySelector('.hero-video-5'),
+    wedding: document.querySelector('.hero-video-6')
+};
 
     /* Все вкладки */
 
@@ -513,14 +509,12 @@ document.addEventListener('DOMContentLoaded', () => {
     */
 
     const videoMap = {
-
-        1: videos.brands,
-
-        2: videos.people,
-
-        3: videos.events
-
-    };
+    1: videos.reels,
+    2: videos.people,
+    3: videos.events,
+    4: videos.snippet,
+    5: videos.wedding
+};
 
 
     /*
