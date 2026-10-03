@@ -486,126 +486,56 @@
 <script src="script.js"></script>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* Все видео */
-
-   const videos = {
-    intro: document.querySelector('.hero-video-1'),
-    reels: document.querySelector('.hero-video-2'),
-    people: document.querySelector('.hero-video-3'),
-    events: document.querySelector('.hero-video-4'),
-    snippet: document.querySelector('.hero-video-5'),
-    wedding: document.querySelector('.hero-video-6')
-};
-
-    /* Все вкладки */
+    const videos = {
+        intro: document.querySelector('.hero-video-1'),
+        reels: document.querySelector('.hero-video-2'),
+        people: document.querySelector('.hero-video-3'),
+        events: document.querySelector('.hero-video-4'),
+        snippet: document.querySelector('.hero-video-5'),
+        wedding: document.querySelector('.hero-video-6')
+    };
 
     const tabs = document.querySelectorAll('.hero-tab');
 
-
-    /*
-       Соответствие вкладки видео
-    */
-
     const videoMap = {
-    1: videos.reels,
-    2: videos.people,
-    3: videos.events,
-    4: videos.snippet,
-    5: videos.wedding
-};
-
-
-    /*
-       Текущее видео
-    */
+        1: videos.reels,
+        2: videos.people,
+        3: videos.events,
+        4: videos.snippet,
+        5: videos.wedding
+    };
 
     let currentVideo = videos.intro;
 
-
-    /*
-       Запускаем главное видео
-    */
-
     currentVideo.play().catch(() => {});
-
-
-    /*
-       Наведение на вкладки
-    */
 
     tabs.forEach(tab => {
 
         tab.addEventListener('mouseenter', () => {
 
             const videoNumber = tab.dataset.video;
+            const nextVideo = videoMap[videoNumber];
 
-            const nextVideo =
-                videoMap[videoNumber];
-
-
-            /*
-               Если это уже активное видео —
-               ничего не делаем
-            */
-
-            if (nextVideo === currentVideo) {
+            if (!nextVideo || nextVideo === currentVideo) {
                 return;
             }
 
-
-            /*
-               Убираем active
-               у всех видео
-            */
-
             Object.values(videos).forEach(video => {
-
                 video.classList.remove('active');
-
             });
 
-
-            /*
-               Запускаем новое видео
-            */
-
             nextVideo.currentTime = 0;
-
             nextVideo.play().catch(() => {});
-
-
-            /*
-               Показываем новое видео
-            */
 
             nextVideo.classList.add('active');
 
-
-            /*
-               Останавливаем старое
-            */
-
             currentVideo.pause();
-
-
-            /*
-               Запоминаем новое
-            */
-
             currentVideo = nextVideo;
 
-
-            /*
-               Активная вкладка
-            */
-
             tabs.forEach(item => {
-
                 item.classList.remove('active');
-
             });
 
             tab.classList.add('active');
@@ -615,7 +545,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
-
 </script>
 
 </body>
