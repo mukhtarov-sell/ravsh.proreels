@@ -448,59 +448,98 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
+    const introVideo = document.querySelector('.hero-video-1');
+
     const videos = {
-        intro: document.querySelector('.hero-video-1'),
-        reels: document.querySelector('.hero-video-2'),
-        people: document.querySelector('.hero-video-3'),
-        events: document.querySelector('.hero-video-4'),
-        snippet: document.querySelector('.hero-video-5'),
-        wedding: document.querySelector('.hero-video-6')
+        1: document.querySelector('.hero-video-2'),
+        2: document.querySelector('.hero-video-3'),
+        3: document.querySelector('.hero-video-4'),
+        4: document.querySelector('.hero-video-5'),
+        5: document.querySelector('.hero-video-6')
     };
 
     const tabs = document.querySelectorAll('.hero-tab');
 
-    const videoMap = {
-        1: videos.reels,
-        2: videos.people,
-        3: videos.events,
-        4: videos.snippet,
-        5: videos.wedding
-    };
+    let activeReference = false;
 
-    let currentVideo = videos.intro;
+    /* =========================
+       СТАРТОВОЕ ВИДЕО
+    ========================= */
 
-    currentVideo.play().catch(() => {});
+    introVideo.classList.add('active');
+
+    introVideo.play().catch(() => {});
+
+
+    /* =========================
+       НАВЕДЕНИЕ НА ВКЛАДКИ
+    ========================= */
 
     tabs.forEach(tab => {
 
         tab.addEventListener('mouseenter', () => {
 
             const videoNumber = tab.dataset.video;
-            const nextVideo = videoMap[videoNumber];
+            const referenceVideo = videos[videoNumber];
 
-            if (!nextVideo || nextVideo === currentVideo) {
-                return;
-            }
+            if (!referenceVideo) return;
 
+            activeReference = true;
+
+            /* убираем intro */
+            introVideo.classList.remove('active');
+            introVideo.pause();
+
+            /* убираем остальные видео */
             Object.values(videos).forEach(video => {
                 video.classList.remove('active');
+
+                if (video !== referenceVideo) {
+                    video.pause();
+                }
             });
 
-            nextVideo.currentTime = 0;
-            nextVideo.play().catch(() => {});
+            /* запускаем нужный референс */
+            referenceVideo.currentTime = 0;
+            referenceVideo.classList.add('active');
 
-            nextVideo.classList.add('active');
-
-            currentVideo.pause();
-            currentVideo = nextVideo;
-
-            tabs.forEach(item => {
-                item.classList.remove('active');
-            });
-
-            tab.classList.add('active');
+            referenceVideo.play().catch(() => {});
 
         });
+
+    });
+
+
+    /* =========================
+       УШЁЛ С ВКЛАДОК
+    ========================= */
+
+    const heroTabs = document.querySelector('.hero-tabs');
+
+    heroTabs.addEventListener('mouseleave', () => {
+
+        activeReference = false;
+
+        /* выключаем все референсы */
+        Object.values(videos).forEach(video => {
+
+            video.classList.remove('active');
+            video.pause();
+
+        });
+
+        /* возвращаем intro */
+        introVideo.currentTime = 0;
+        introVideo.classList.add('active');
+
+        introVideo.play().catch(() => {});
+
+        /* возвращаем активную вкладку */
+        tabs.forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        tabs[0].classList.add('active');
 
     });
 
