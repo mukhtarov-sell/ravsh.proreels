@@ -88,10 +88,14 @@ a {
 
 .hero {
     position: relative;
+
     width: 100%;
-    height: calc(100vh - 80px);
-    min-height: 600px;
+    height: 100vh;
+
+    min-height: 700px;
+
     overflow: hidden;
+
     display: flex;
     align-items: center;
 }
