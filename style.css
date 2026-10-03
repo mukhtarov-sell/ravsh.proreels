@@ -181,27 +181,27 @@ a {
 }
 
 /* =========================================
-   ВКЛАДКИ В ШАПКЕ СВЕРХУ HERO
+   ВКЛАДКИ В ШАПКЕ HERO
 ========================================= */
+
 
 .hero-tabs {
     position: absolute;
 
-    top: 0;
     left: 60px;
     right: 60px;
+    bottom: 0;
 
     z-index: 5;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    border-top: 1px solid rgba(255,255,255,0.35);
 }
 
 .hero-tab {
     position: relative;
-
-    flex: 1;
 
     padding: 20px 20px 18px 0;
 
@@ -216,20 +216,20 @@ a {
     transition:
         opacity 0.3s ease,
         border-color 0.3s ease,
-        padding-left 0.4s ease;
+        padding-left 0.3s ease;
+}
+
+.hero-tab:not(:last-child) {
+    border-right: 1px solid rgba(255,255,255,0.2);
 }
 
 .hero-tab:hover {
     opacity: 1;
-
     padding-left: 12px;
-
-    border-bottom-color: #fff;
 }
 
 .hero-tab.active {
     opacity: 1;
-
     border-bottom-color: #fff;
 }
 
@@ -239,7 +239,6 @@ a {
     margin-bottom: 6px;
 
     font-size: 18px;
-
     font-weight: 500;
 }
 
@@ -250,7 +249,6 @@ a {
 
     opacity: 0.65;
 }
-
 /* =========================================
    МОБИЛЬНАЯ ВЕРСИЯ
 ========================================= */
