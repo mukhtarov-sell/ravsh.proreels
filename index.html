@@ -37,9 +37,9 @@
 
 <section class="hero">
 
-    <!-- ВИДЕО -->
+    <!-- ГЛАВНОЕ INTRO-ВИДЕО -->
     <video
-        class="hero-video hero-video-1 active"
+        class="hero-video hero-video-intro"
         autoplay
         muted
         loop
@@ -49,90 +49,63 @@
         <source src="./videos/intro.mp4" type="video/mp4">
     </video>
 
-    <video
-        class="hero-video hero-video-2"
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-        <source src="./videos/reels.mp4" type="video/mp4">
-    </video>
 
-    <video
-        class="hero-video hero-video-3"
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-        <source src="./videos/people.mp4" type="video/mp4">
-    </video>
-
-    <video
-        class="hero-video hero-video-4"
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-        <source src="./videos/events.mp4" type="video/mp4">
-    </video>
-
-    <video
-        class="hero-video hero-video-5"
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-        <source src="./videos/snippet.mp4" type="video/mp4">
-    </video>
-
-    <video
-        class="hero-video hero-video-6"
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
-        <source src="./videos/wedding.mp4" type="video/mp4">
-    </video>
+    <!-- ФОТО ПРИ НАВЕДЕНИИ -->
+    <div class="hero-hover-image"></div>
 
 
     <!-- ЗАТЕМНЕНИЕ -->
     <div class="hero-overlay"></div>
 
 
-    <!-- ВКЛАДКИ СВЕРХУ -->
+    <!-- ВКЛАДКИ -->
     <div class="hero-tabs">
 
-    <div class="hero-tab active" data-video="1">
-        <span class="tab-title">Reels</span>
-        <span class="tab-description">Reels и реклама</span>
-    </div>
+        <div
+            class="hero-tab active"
+            data-image="./images/reels.jpg"
+        >
+            <span class="tab-title">Reels</span>
+            <span class="tab-description">Reels и реклама</span>
+        </div>
 
-    <div class="hero-tab" data-video="2">
-        <span class="tab-title">Люди</span>
-        <span class="tab-description">Эксперты и блогеры</span>
-    </div>
 
-    <div class="hero-tab" data-video="3">
-        <span class="tab-title">События</span>
-        <span class="tab-description">Съёмки и мероприятия</span>
-    </div>
+        <div
+            class="hero-tab"
+            data-image="./images/people.jpg"
+        >
+            <span class="tab-title">Люди</span>
+            <span class="tab-description">Эксперты и блогеры</span>
+        </div>
 
-    <div class="hero-tab" data-video="4">
-        <span class="tab-title">Сниппет</span>
-        <span class="tab-description">Динамичные ролики</span>
-    </div>
 
-    <div class="hero-tab" data-video="5">
-        <span class="tab-title">Свадьбы</span>
-        <span class="tab-description">Эмоции и моменты</span>
-    </div>
+        <div
+            class="hero-tab"
+            data-image="./images/events.jpg"
+        >
+            <span class="tab-title">События</span>
+            <span class="tab-description">Съёмки и мероприятия</span>
+        </div>
 
-</div>
+
+        <div
+            class="hero-tab"
+            data-image="./images/snippet.jpg"
+        >
+            <span class="tab-title">Сниппет</span>
+            <span class="tab-description">Динамичные ролики</span>
+        </div>
+
+
+        <div
+            class="hero-tab"
+            data-image="./images/wedding.jpg"
+        >
+            <span class="tab-title">Свадьбы</span>
+            <span class="tab-description">Эмоции и моменты</span>
+        </div>
+
+    </div>
 
 
     <!-- ТЕКСТ -->
@@ -157,9 +130,14 @@
         </a>
 
     </div>
+
 </section>
 
+
+<!-- СТАТИСТИКА -->
+
 <section class="stats-section">
+
     <div class="stats-inner">
 
         <div class="stat-item">
@@ -178,8 +156,8 @@
         </div>
 
     </div>
+
 </section>
-    
     <!-- SERVICES -->
 
     <section class="section services">
