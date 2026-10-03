@@ -192,7 +192,7 @@ a {
     right: 60px;
     bottom: 0;
 
-    z-index: 5;
+    z-index: 6;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -378,8 +378,7 @@ a {
 
     left: 60px;
     right: 60px;
-
-    bottom: 105px;
+    bottom: 115px;
 
     z-index: 5;
 
