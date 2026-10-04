@@ -575,7 +575,242 @@ textarea {
 .budget-card:hover {
     padding-left: 20px;
 }
+/* =========================================================
+   CONTACT
+========================================================= */
 
+.contact-section {
+    width: 100%;
+
+    background: var(--black);
+
+    border-top: 1px solid var(--line);
+}
+
+.contact-inner {
+    width: 100%;
+
+    min-height: 720px;
+
+    padding: 45px 60px 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.contact-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.contact-number {
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-label {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.contact-content {
+    max-width: 1000px;
+}
+
+.contact-content h2 {
+    margin-bottom: 30px;
+
+    font-size: clamp(70px, 10vw, 150px);
+
+    line-height: 0.85;
+
+    letter-spacing: -7px;
+
+    font-weight: 500;
+
+    color: var(--white);
+}
+
+.contact-content p {
+    margin-bottom: 40px;
+
+    font-size: clamp(18px, 2vw, 26px);
+
+    line-height: 1.4;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   TELEGRAM BUTTON
+========================================================= */
+
+.contact-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 45px;
+
+    min-width: 250px;
+
+    padding: 17px 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 100px;
+
+    color: #fff;
+
+    font-size: 13px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.contact-button span {
+    font-size: 18px;
+
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #fff;
+
+    color: #000;
+
+    border-color: #fff;
+
+    transform: translateY(-3px);
+}
+
+.contact-button:hover span {
+    transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.contact-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =========================================================
+   CONTACT MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .contact-inner {
+        min-height: 650px;
+
+        padding: 30px 20px 25px;
+    }
+
+    .contact-number,
+    .contact-label {
+        font-size: 9px;
+    }
+
+    .contact-content h2 {
+        margin-bottom: 22px;
+
+        font-size: 64px;
+
+        letter-spacing: -4px;
+    }
+
+    .contact-content p {
+        margin-bottom: 30px;
+
+        font-size: 17px;
+    }
+
+    .contact-button {
+        width: 100%;
+
+        min-width: 0;
+
+        padding: 16px 20px;
+
+        gap: 20px;
+    }
+
+    .contact-bottom {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .contact-inner {
+        min-height: 600px;
+
+        padding: 25px 15px 20px;
+    }
+
+    .contact-content h2 {
+        font-size: 56px;
+
+        letter-spacing: -3px;
+    }
+
+    .contact-content p {
+        font-size: 15px;
+    }
+}
 
 /* =========================================================
    LEFT PART
