@@ -489,37 +489,35 @@ textarea {
    BUDGET
 ========================================================= */
 
+/* =========================================================
+   BUDGET
+========================================================= */
+
 .budget-section {
     width: 100%;
-
     background: var(--black);
-
-    border-bottom: 1px solid var(--line);
 }
 
 .budget-inner {
     width: 100%;
-
-    padding: 110px 60px 120px;
+    padding: 120px 60px;
 }
 
-/* Заголовок */
+/* Заголовок секции */
 
 .budget-heading {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: flex-end;
-
-    margin-bottom: 70px;
+    margin-bottom: 45px;
 }
 
 .budget-eyebrow {
+    margin-bottom: 18px;
+
     font-size: 11px;
+    line-height: 1;
 
     letter-spacing: 2px;
 
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .budget-heading h2 {
@@ -530,107 +528,267 @@ textarea {
     letter-spacing: -3px;
 
     font-weight: 500;
+
+    color: var(--white);
 }
 
-/* Список */
+/* =========================================================
+   ОСНОВНАЯ КАРТОЧКА
+========================================================= */
 
-.budget-list {
+.budget-card {
+    position: relative;
+
     width: 100%;
 
-    border-top: 1px solid var(--line);
+    min-height: 320px;
+
+    padding: 45px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    background: #101010;
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.4s ease,
+        background 0.4s ease;
 }
 
-.budget-item {
+.budget-card:hover {
+    border-color: rgba(255, 255, 255, 0.45);
+
+    background: #131313;
+}
+
+/* Верхняя часть */
+
+.budget-card-top {
     display: flex;
 
     justify-content: space-between;
-    align-items: center;
+
+    align-items: flex-start;
 
     gap: 40px;
-
-    padding: 35px 0;
-
-    border-bottom: 1px solid var(--line);
 }
 
-/* Левая часть */
+.budget-card-title {
+    font-size: 13px;
 
-.budget-info {
-    max-width: 600px;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.5);
 }
 
-.budget-info h3 {
-    margin-bottom: 12px;
+/* Описание */
 
-    font-size: 28px;
+.budget-card-description {
+    max-width: 480px;
 
-    line-height: 1;
+    margin-top: 20px;
 
-    font-weight: 500;
+    font-size: 18px;
 
-    letter-spacing: -1px;
+    line-height: 1.45;
+
+    color: rgba(255, 255, 255, 0.75);
 }
 
-.budget-info p {
-    max-width: 500px;
+/* Цена */
 
-    margin-bottom: 10px;
+.budget-card-price {
+    text-align: right;
 
-    font-size: 15px;
-
-    line-height: 1.5;
-
-    color: rgba(255, 255, 255, 0.65);
+    white-space: nowrap;
 }
 
-.budget-info span {
+.budget-card-price strong {
+    display: block;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -4px;
+
+    color: var(--white);
+}
+
+.budget-card-price span {
+    display: block;
+
+    margin-top: 12px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Нижняя часть */
+
+.budget-card-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-top: 70px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.budget-card-note {
     font-size: 12px;
 
     color: rgba(255, 255, 255, 0.4);
 }
 
-/* Цена */
+.budget-card-note strong {
+    color: rgba(255, 255, 255, 0.7);
 
-.budget-price {
-    display: flex;
-
-    align-items: baseline;
-
-    gap: 8px;
-
-    white-space: nowrap;
+    font-weight: 500;
 }
 
-.budget-price strong {
-    font-size: clamp(28px, 3vw, 46px);
+/* Кнопка */
 
-    line-height: 1;
+.budget-card-button {
+    display: inline-flex;
 
-    font-weight: 400;
+    align-items: center;
 
-    letter-spacing: -2px;
+    justify-content: center;
 
-    color: #f5f5f3;
-}
+    padding: 13px 22px;
 
-.budget-price small {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 100px;
+
     font-size: 12px;
 
-    color: rgba(255, 255, 255, 0.45);
+    color: #fff;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
 
-/* Примечание */
+.budget-card-button:hover {
+    background: #fff;
 
-.budget-note {
-    margin-top: 25px;
+    color: #000;
 
-    font-size: 11px;
-
-    line-height: 1.5;
-
-    color: rgba(255, 255, 255, 0.35);
+    border-color: #fff;
 }
 
+/* =========================================================
+   BUDGET MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .budget-inner {
+        padding: 80px 20px;
+    }
+
+    .budget-heading {
+        margin-bottom: 30px;
+    }
+
+    .budget-eyebrow {
+        margin-bottom: 15px;
+
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .budget-heading h2 {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+    .budget-card {
+        min-height: auto;
+
+        padding: 25px;
+    }
+
+    .budget-card-top {
+        display: block;
+    }
+
+    .budget-card-title {
+        font-size: 11px;
+    }
+
+    .budget-card-description {
+        max-width: 100%;
+
+        margin-top: 15px;
+
+        font-size: 15px;
+    }
+
+    .budget-card-price {
+        margin-top: 45px;
+
+        text-align: left;
+    }
+
+    .budget-card-price strong {
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+    .budget-card-price span {
+        margin-top: 8px;
+
+        font-size: 9px;
+    }
+
+    .budget-card-bottom {
+        display: block;
+
+        margin-top: 50px;
+
+        padding-top: 20px;
+    }
+
+    .budget-card-note {
+        margin-bottom: 20px;
+
+        font-size: 10px;
+    }
+
+    .budget-card-button {
+        width: 100%;
+    }
+}
 /* =========================================================
    GENERAL SECTIONS
 ========================================================= */
