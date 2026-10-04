@@ -426,27 +426,19 @@
 <script>
 document.addEventListener('DOMContentLoaded', () => {
 
-    const introVideo = document.querySelector('.hero-video-1');
-
-    const videos = {
-        1: document.querySelector('.hero-video-2'),
-        2: document.querySelector('.hero-video-3'),
-        3: document.querySelector('.hero-video-4'),
-        4: document.querySelector('.hero-video-5'),
-        5: document.querySelector('.hero-video-6')
-    };
-
+    const introVideo = document.querySelector('.hero-video-intro');
+    const hoverImage = document.querySelector('.hero-hover-image');
     const tabs = document.querySelectorAll('.hero-tab');
+    const heroTabs = document.querySelector('.hero-tabs');
 
-    let activeReference = false;
 
     /* =========================
-       СТАРТОВОЕ ВИДЕО
+       ЗАПУСК INTRO
     ========================= */
 
-    introVideo.classList.add('active');
-
-    introVideo.play().catch(() => {});
+    if (introVideo) {
+        introVideo.play().catch(() => {});
+    }
 
 
     /* =========================
@@ -457,31 +449,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         tab.addEventListener('mouseenter', () => {
 
-            const videoNumber = tab.dataset.video;
-            const referenceVideo = videos[videoNumber];
+            const image = tab.dataset.image;
 
-            if (!referenceVideo) return;
+            if (!image) return;
 
-            activeReference = true;
 
-            /* убираем intro */
-            introVideo.classList.remove('active');
-            introVideo.pause();
+            /* Меняем картинку */
 
-            /* убираем остальные видео */
-            Object.values(videos).forEach(video => {
-                video.classList.remove('active');
+            hoverImage.style.backgroundImage = `url("${image}")`;
 
-                if (video !== referenceVideo) {
-                    video.pause();
-                }
+
+            /* Показываем её */
+
+            hoverImage.classList.add('active');
+
+
+            /* Активная вкладка */
+
+            tabs.forEach(item => {
+                item.classList.remove('active');
             });
 
-            /* запускаем нужный референс */
-            referenceVideo.currentTime = 0;
-            referenceVideo.classList.add('active');
-
-            referenceVideo.play().catch(() => {});
+            tab.classList.add('active');
 
         });
 
@@ -489,35 +478,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* =========================
-       УШЁЛ С ВКЛАДОК
+       КУРСОР УШЁЛ С ВКЛАДОК
     ========================= */
-
-    const heroTabs = document.querySelector('.hero-tabs');
 
     heroTabs.addEventListener('mouseleave', () => {
 
-        activeReference = false;
+        hoverImage.classList.remove('active');
 
-        /* выключаем все референсы */
-        Object.values(videos).forEach(video => {
 
-            video.classList.remove('active');
-            video.pause();
+        /* Возвращаем первую вкладку */
 
+        tabs.forEach(item => {
+            item.classList.remove('active');
         });
 
-        /* возвращаем intro */
-        introVideo.currentTime = 0;
-        introVideo.classList.add('active');
-
-        introVideo.play().catch(() => {});
-
-        /* возвращаем активную вкладку */
-        tabs.forEach(tab => {
-            tab.classList.remove('active');
-        });
-
-        tabs[0].classList.add('active');
+        if (tabs[0]) {
+            tabs[0].classList.add('active');
+        }
 
     });
 
