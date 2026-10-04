@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+
 /* =========================================================
    VARIABLES
 ========================================================= */
@@ -10,6 +11,7 @@
     --gray: #a0a0a0;
     --line: rgba(255, 255, 255, 0.25);
 }
+
 
 /* =========================================================
    RESET
@@ -48,23 +50,26 @@ textarea {
     font-family: inherit;
 }
 
+
 /* =========================================================
    HEADER
 ========================================================= */
 
 .header {
-    width: 100%;
-    padding: 25px 5vw;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
     position: absolute;
+
     top: 0;
     left: 0;
 
     z-index: 20;
+
+    width: 100%;
+
+    padding: 25px 5vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
@@ -75,18 +80,23 @@ textarea {
 
 .nav {
     display: flex;
+    align-items: center;
     gap: 30px;
 }
 
 .nav a {
     color: rgba(255, 255, 255, 0.65);
-    font-size: 14px;
-    transition: color 0.3s ease;
+
+    font-size: 13px;
+
+    transition:
+        color 0.3s ease;
 }
 
 .nav a:hover {
     color: #fff;
 }
+
 
 /* =========================================================
    HERO
@@ -94,8 +104,10 @@ textarea {
 
 .hero {
     position: relative;
+
     width: 100%;
     height: 100vh;
+
     min-height: 700px;
 
     overflow: hidden;
@@ -105,14 +117,15 @@ textarea {
 
 .hero-video {
     position: absolute;
+
     inset: 0;
+
+    z-index: 1;
 
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
-    z-index: 1;
 
     opacity: 1;
 
@@ -121,6 +134,7 @@ textarea {
 
 .hero-hover-image {
     position: absolute;
+
     inset: 0;
 
     z-index: 2;
@@ -131,7 +145,8 @@ textarea {
 
     opacity: 0;
 
-    transition: opacity 0.6s ease;
+    transition:
+        opacity 0.6s ease;
 
     pointer-events: none;
 }
@@ -142,6 +157,7 @@ textarea {
 
 .hero-overlay {
     position: absolute;
+
     inset: 0;
 
     z-index: 3;
@@ -152,11 +168,12 @@ textarea {
             rgba(0, 0, 0, 0.35) 0%,
             rgba(0, 0, 0, 0.05) 40%,
             rgba(0, 0, 0, 0.25) 65%,
-            rgba(0, 0, 0, 0.75) 100%
+            rgba(0, 0, 0, 0.78) 100%
         );
 
     pointer-events: none;
 }
+
 
 /* =========================================================
    HERO CONTENT
@@ -168,12 +185,12 @@ textarea {
     left: 60px;
     top: 50%;
 
-    transform: translateY(-50%);
-
     z-index: 5;
 
     width: calc(100% - 120px);
-    max-width: 800px;
+    max-width: 850px;
+
+    transform: translateY(-50%);
 
     color: #fff;
 }
@@ -182,16 +199,18 @@ textarea {
     margin-bottom: 20px;
 
     font-size: 13px;
+
     letter-spacing: 3px;
+
     font-weight: 500;
 
     opacity: 0.8;
 }
 
 .hero h1 {
-    margin: 0 0 25px;
-
     max-width: 850px;
+
+    margin: 0 0 25px;
 
     font-size: clamp(42px, 6vw, 82px);
 
@@ -223,11 +242,13 @@ textarea {
     padding: 16px 28px;
 
     background: #fff;
+
     color: #000;
 
     border-radius: 50px;
 
     font-size: 14px;
+
     font-weight: 500;
 
     transition:
@@ -237,8 +258,10 @@ textarea {
 
 .button:hover {
     transform: translateY(-3px);
+
     background: #f0f0f0;
 }
+
 
 /* =========================================================
    HERO TABS
@@ -255,9 +278,11 @@ textarea {
 
     display: grid;
 
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
 
-    border-top: 1px solid var(--line);
+    border-top:
+        1px solid var(--line);
 }
 
 .hero-tab {
@@ -272,20 +297,21 @@ textarea {
 
     opacity: 0.55;
 
-    border-bottom: 2px solid transparent;
+    border-bottom:
+        2px solid transparent;
+
+    cursor: pointer;
 
     transition:
         opacity 0.3s ease,
         border-color 0.3s ease,
         padding-left 0.4s ease;
-
-    cursor: pointer;
 }
 
 .hero-tab:hover {
-    opacity: 1;
-
     padding-left: 12px;
+
+    opacity: 1;
 
     border-bottom-color: #fff;
 }
@@ -318,6 +344,7 @@ textarea {
     color: rgba(255, 255, 255, 0.65);
 }
 
+
 /* =========================================================
    STATS
 ========================================================= */
@@ -327,7 +354,8 @@ textarea {
 
     background: var(--black);
 
-    border-bottom: 1px solid var(--line);
+    border-bottom:
+        1px solid var(--line);
 }
 
 .stats-inner {
@@ -337,11 +365,13 @@ textarea {
 
     display: grid;
 
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
 
     align-items: center;
 
-    border-top: 1px solid var(--line);
+    border-top:
+        1px solid var(--line);
 }
 
 .stat-item {
@@ -360,6 +390,14 @@ textarea {
     color: #fff;
 }
 
+.stat-item:first-child {
+    padding-left: 0;
+}
+
+.stat-item:last-child {
+    padding-right: 0;
+}
+
 .stat-item:not(:last-child)::after {
     content: "";
 
@@ -371,15 +409,8 @@ textarea {
     width: 1px;
     height: 50px;
 
-    background: rgba(255, 255, 255, 0.18);
-}
-
-.stat-item:first-child {
-    padding-left: 0;
-}
-
-.stat-item:last-child {
-    padding-right: 0;
+    background:
+        rgba(255, 255, 255, 0.18);
 }
 
 .stat-item strong {
@@ -391,7 +422,7 @@ textarea {
 
     letter-spacing: -3px;
 
-    color: #f5f5f3;
+    color: var(--white);
 }
 
 .stat-item span {
@@ -406,6 +437,7 @@ textarea {
     letter-spacing: 1px;
 }
 
+
 /* =========================================================
    GENERAL
 ========================================================= */
@@ -413,6 +445,7 @@ textarea {
 section:not(.hero) {
     position: relative;
 }
+
 
 /* =========================================================
    WORKS
@@ -446,13 +479,9 @@ section:not(.hero) {
     gap: 20px;
 }
 
-.section-number {
-    font-size: 11px;
-
-    color: rgba(255, 255, 255, 0.4);
-}
-
 .section-label {
+    display: block;
+
     font-size: 11px;
 
     letter-spacing: 0.12em;
@@ -465,7 +494,8 @@ section:not(.hero) {
 
     max-width: 600px;
 
-    font-size: clamp(50px, 7vw, 110px);
+    font-size:
+        clamp(50px, 7vw, 110px);
 
     line-height: 0.9;
 
@@ -474,6 +504,7 @@ section:not(.hero) {
     letter-spacing: -0.055em;
 }
 
+
 /* =========================================================
    WORKS GRID
 ========================================================= */
@@ -481,10 +512,12 @@ section:not(.hero) {
 .works-grid {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 80px 24px;
 }
+
 
 /* =========================================================
    WORK CARD
@@ -496,13 +529,12 @@ section:not(.hero) {
     width: 100%;
 
     color: #fff;
-
-    text-decoration: none;
 }
 
 .work-card-large {
     grid-column: span 2;
 }
+
 
 /* =========================================================
    WORK MEDIA
@@ -515,35 +547,37 @@ section:not(.hero) {
 
     height: 42vw;
 
-    max-height: 760px;
-
     min-height: 420px;
+
+    max-height: 760px;
 
     overflow: hidden;
 
     background: #111;
 }
 
-.work-card:not(.work-card-large) .work-media {
+.work-card:not(.work-card-large)
+.work-media {
     height: 32vw;
 
-    max-height: 550px;
-
     min-height: 320px;
+
+    max-height: 550px;
 }
 
 .work-media video {
-    width: 100%;
-
-    height: 100%;
-
     display: block;
+
+    width: 100%;
+    height: 100%;
 
     object-fit: cover;
 
     transition:
-        transform 0.8s cubic-bezier(.2, .7, .2, 1);
+        transform 0.8s
+        cubic-bezier(.2, .7, .2, 1);
 }
+
 
 /* =========================================================
    WORK OVERLAY
@@ -554,11 +588,13 @@ section:not(.hero) {
 
     inset: 0;
 
-    background: rgba(0, 0, 0, 0.08);
+    background:
+        rgba(0, 0, 0, 0.08);
 
     transition:
         background 0.5s ease;
 }
+
 
 /* =========================================================
    WORK ARROW
@@ -578,7 +614,8 @@ section:not(.hero) {
     align-items: center;
     justify-content: center;
 
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border:
+        1px solid rgba(255, 255, 255, 0.5);
 
     border-radius: 50%;
 
@@ -597,6 +634,7 @@ section:not(.hero) {
         color 0.4s ease;
 }
 
+
 /* =========================================================
    WORK INFO
 ========================================================= */
@@ -612,7 +650,8 @@ section:not(.hero) {
 
     margin-top: 16px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    border-top:
+        1px solid rgba(255, 255, 255, 0.18);
 }
 
 .work-info > div {
@@ -626,7 +665,8 @@ section:not(.hero) {
 .work-number {
     font-size: 10px;
 
-    color: rgba(255, 255, 255, 0.35);
+    color:
+        rgba(255, 255, 255, 0.35);
 }
 
 .work-info h3 {
@@ -642,8 +682,10 @@ section:not(.hero) {
 .work-type {
     font-size: 11px;
 
-    color: rgba(255, 255, 255, 0.4);
+    color:
+        rgba(255, 255, 255, 0.4);
 }
+
 
 /* =========================================================
    WORK HOVER
@@ -654,7 +696,8 @@ section:not(.hero) {
 }
 
 .work-card:hover .work-overlay {
-    background: rgba(0, 0, 0, 0.22);
+    background:
+        rgba(0, 0, 0, 0.22);
 }
 
 .work-card:hover .work-arrow {
@@ -666,6 +709,236 @@ section:not(.hero) {
 
     color: #000;
 }
+
+
+/* =========================================================
+   BENEFITS
+   ЧТО ПОЛУЧАЕТ КЛИЕНТ
+========================================================= */
+
+.benefits-section {
+    width: 100%;
+
+    padding: 140px 60px 160px;
+
+    background: #101010;
+
+    color: #fff;
+}
+
+.benefits-inner {
+    width: 100%;
+}
+
+.benefits-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 90px;
+}
+
+.benefits-heading .section-label {
+    padding-top: 10px;
+}
+
+.benefits-heading h2 {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size:
+        clamp(50px, 7vw, 105px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -0.055em;
+}
+
+.benefits-list {
+    width: 100%;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.2);
+}
+
+.benefit-item {
+    display: grid;
+
+    grid-template-columns: 70px minmax(0, 1fr);
+
+    gap: 40px;
+
+    padding: 38px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.2);
+
+    transition:
+        padding-left 0.4s ease;
+}
+
+.benefit-item:hover {
+    padding-left: 20px;
+}
+
+.benefit-number {
+    padding-top: 5px;
+
+    font-size: 11px;
+
+    color:
+        rgba(255, 255, 255, 0.3);
+}
+
+.benefit-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 0.8fr)
+        minmax(300px, 1fr);
+
+    gap: 60px;
+
+    align-items: start;
+}
+
+.benefit-content h3 {
+    margin: 0;
+
+    font-size: clamp(24px, 3vw, 38px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -1.5px;
+}
+
+.benefit-content p {
+    max-width: 520px;
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color:
+        rgba(255, 255, 255, 0.5);
+}
+
+
+/* =========================================================
+   REVIEWS
+========================================================= */
+
+.reviews {
+    width: 100%;
+
+    padding: 140px 60px 160px;
+
+    background: var(--black);
+
+    color: #fff;
+}
+
+.section-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 80px;
+}
+
+.section-title .eyebrow {
+    margin: 0;
+}
+
+.section-title h2 {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size:
+        clamp(50px, 7vw, 105px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -0.055em;
+}
+
+.reviews-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.review {
+    min-height: 360px;
+
+    padding: 35px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    background:
+        rgba(255, 255, 255, 0.015);
+
+    transition:
+        background 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.review:hover {
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    border-color:
+        rgba(255, 255, 255, 0.35);
+}
+
+.review p {
+    max-width: 600px;
+
+    font-size:
+        clamp(22px, 3vw, 34px);
+
+    line-height: 1.25;
+
+    letter-spacing: -0.8px;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.review strong {
+    font-size: 11px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+
+    color:
+        rgba(255, 255, 255, 0.4);
+}
+
 
 /* =========================================================
    BUDGET
@@ -696,13 +969,15 @@ section:not(.hero) {
 
     letter-spacing: 2px;
 
-    color: rgba(255, 255, 255, 0.45);
+    color:
+        rgba(255, 255, 255, 0.45);
 }
 
 .budget-heading h2 {
     margin: 0;
 
-    font-size: clamp(42px, 5vw, 72px);
+    font-size:
+        clamp(42px, 5vw, 72px);
 
     line-height: 0.95;
 
@@ -716,7 +991,8 @@ section:not(.hero) {
 .budget-list {
     width: 100%;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-top:
+        1px solid rgba(255, 255, 255, 0.2);
 }
 
 .budget-card {
@@ -734,9 +1010,11 @@ section:not(.hero) {
 
     gap: 50px;
 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.2);
 
-    transition: padding-left 0.4s ease;
+    transition:
+        padding-left 0.4s ease;
 }
 
 .budget-card:hover {
@@ -756,15 +1034,16 @@ section:not(.hero) {
 }
 
 .budget-card-number {
-    padding-top: 5px;
-
     min-width: 30px;
+
+    padding-top: 5px;
 
     font-size: 11px;
 
     letter-spacing: 1px;
 
-    color: rgba(255, 255, 255, 0.3);
+    color:
+        rgba(255, 255, 255, 0.3);
 }
 
 .budget-card-info {
@@ -792,7 +1071,8 @@ section:not(.hero) {
 
     line-height: 1.5;
 
-    color: rgba(255, 255, 255, 0.55);
+    color:
+        rgba(255, 255, 255, 0.55);
 }
 
 .budget-card-price {
@@ -800,11 +1080,11 @@ section:not(.hero) {
 
     align-items: baseline;
 
+    justify-content: flex-end;
+
     gap: 8px;
 
     min-width: 220px;
-
-    justify-content: flex-end;
 
     white-space: nowrap;
 
@@ -812,7 +1092,8 @@ section:not(.hero) {
 }
 
 .budget-card-price strong {
-    font-size: clamp(28px, 3vw, 44px);
+    font-size:
+        clamp(28px, 3vw, 44px);
 
     line-height: 1;
 
@@ -820,13 +1101,14 @@ section:not(.hero) {
 
     letter-spacing: -2px;
 
-    color: #f5f5f3;
+    color: var(--white);
 }
 
 .budget-card-price span {
     font-size: 11px;
 
-    color: rgba(255, 255, 255, 0.4);
+    color:
+        rgba(255, 255, 255, 0.4);
 }
 
 .budget-note {
@@ -836,8 +1118,98 @@ section:not(.hero) {
 
     line-height: 1.5;
 
-    color: rgba(255, 255, 255, 0.3);
+    color:
+        rgba(255, 255, 255, 0.3);
 }
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about {
+    width: 100%;
+
+    padding: 140px 60px 160px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 100px;
+
+    align-items: center;
+
+    background: #101010;
+
+    color: #fff;
+}
+
+.about-image {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: #151515;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.8s
+        cubic-bezier(.2, .7, .2, 1);
+}
+
+.about:hover .about-image img {
+    transform: scale(1.02);
+}
+
+.about-text {
+    max-width: 650px;
+}
+
+.about-text .eyebrow {
+    margin-bottom: 25px;
+}
+
+.about-text h2 {
+    margin-bottom: 45px;
+
+    font-size:
+        clamp(50px, 7vw, 105px);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+
+    letter-spacing: -0.055em;
+}
+
+.about-text p {
+    max-width: 600px;
+
+    margin-bottom: 22px;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color:
+        rgba(255, 255, 255, 0.58);
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
 
 /* =========================================================
    CONTACT
@@ -848,7 +1220,8 @@ section:not(.hero) {
 
     background: var(--black);
 
-    border-top: 1px solid var(--line);
+    border-top:
+        1px solid var(--line);
 }
 
 .contact-inner {
@@ -870,21 +1243,9 @@ section:not(.hero) {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
-}
 
-.contact-number {
-    display: block;
-
-    font-size: 11px;
-
-    line-height: 1;
-
-    letter-spacing: 1px;
-
-    color: rgba(255, 255, 255, 0.3);
+    justify-content: space-between;
 }
 
 .contact-label {
@@ -896,7 +1257,8 @@ section:not(.hero) {
 
     letter-spacing: 2px;
 
-    color: rgba(255, 255, 255, 0.45);
+    color:
+        rgba(255, 255, 255, 0.45);
 }
 
 .contact-content {
@@ -918,7 +1280,8 @@ section:not(.hero) {
 
     font-family: 'Inter', sans-serif;
 
-    font-size: clamp(70px, 10vw, 150px);
+    font-size:
+        clamp(70px, 10vw, 150px);
 
     line-height: 0.85;
 
@@ -933,8 +1296,6 @@ section:not(.hero) {
     word-break: normal;
 
     overflow-wrap: normal;
-
-    writing-mode: horizontal-tb;
 }
 
 .contact-content p {
@@ -944,19 +1305,13 @@ section:not(.hero) {
 
     margin: 0 0 40px;
 
-    font-size: clamp(18px, 2vw, 26px);
+    font-size:
+        clamp(18px, 2vw, 26px);
 
     line-height: 1.4;
 
-    color: rgba(255, 255, 255, 0.55);
-
-    white-space: normal;
-
-    word-break: normal;
-
-    overflow-wrap: normal;
-
-    writing-mode: horizontal-tb;
+    color:
+        rgba(255, 255, 255, 0.55);
 }
 
 .contact-button {
@@ -972,7 +1327,8 @@ section:not(.hero) {
 
     padding: 17px 22px;
 
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
 
     border-radius: 100px;
 
@@ -992,7 +1348,8 @@ section:not(.hero) {
 
     line-height: 1;
 
-    transition: transform 0.3s ease;
+    transition:
+        transform 0.3s ease;
 }
 
 .contact-button:hover {
@@ -1006,7 +1363,8 @@ section:not(.hero) {
 }
 
 .contact-button:hover span {
-    transform: translate(3px, -3px);
+    transform:
+        translate(3px, -3px);
 }
 
 .contact-bottom {
@@ -1020,7 +1378,8 @@ section:not(.hero) {
 
     padding-top: 25px;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
 
     font-size: 10px;
 
@@ -1028,8 +1387,10 @@ section:not(.hero) {
 
     letter-spacing: 1px;
 
-    color: rgba(255, 255, 255, 0.3);
+    color:
+        rgba(255, 255, 255, 0.3);
 }
+
 
 /* =========================================================
    FOOTER
@@ -1042,18 +1403,30 @@ footer {
 
     display: flex;
 
-    justify-content: space-between;
-
     align-items: center;
 
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    justify-content: space-between;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.15);
 
     background: var(--black);
 
-    color: rgba(255, 255, 255, 0.4);
+    color:
+        rgba(255, 255, 255, 0.4);
 
     font-size: 11px;
 }
+
+footer a {
+    transition:
+        color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
 
 /* =========================================================
    MOBILE
@@ -1061,27 +1434,37 @@ footer {
 
 @media (max-width: 700px) {
 
-    /* HEADER */
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .header {
         padding: 20px;
     }
 
     .nav {
-        gap: 18px;
+        gap: 15px;
     }
 
     .nav a {
-        font-size: 12px;
+        font-size: 10px;
+    }
+
+    .nav a:nth-child(2),
+    .nav a:nth-child(3) {
+        display: none;
     }
 
 
-    /* HERO */
+    /* =====================================================
+       HERO
+    ===================================================== */
 
     .hero {
         height: 100svh;
 
-        min-height: 700px;
+        min-height: 650px;
     }
 
     .hero-content {
@@ -1092,9 +1475,10 @@ footer {
 
         width: auto;
 
-        transform: translateY(-50%);
-
         max-width: none;
+
+        transform:
+            translateY(-50%);
     }
 
     .eyebrow {
@@ -1108,7 +1492,8 @@ footer {
     .hero h1 {
         margin-bottom: 20px;
 
-        font-size: clamp(40px, 11vw, 60px);
+        font-size:
+            clamp(40px, 11vw, 60px);
 
         line-height: 0.96;
 
@@ -1130,13 +1515,16 @@ footer {
     }
 
 
-    /* HERO TABS */
+    /* =====================================================
+       HERO TABS
+    ===================================================== */
 
     .hero-tabs {
         left: 20px;
         right: 20px;
 
-        grid-template-columns: repeat(5, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(5, minmax(0, 1fr));
     }
 
     .hero-tab {
@@ -1162,12 +1550,15 @@ footer {
     }
 
 
-    /* STATS */
+    /* =====================================================
+       STATS
+    ===================================================== */
 
     .stats-inner {
         padding: 25px 20px;
 
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
 
         gap: 10px;
     }
@@ -1198,6 +1589,7 @@ footer {
 
     .stat-item:not(:last-child)::after {
         top: 5px;
+
         right: 0;
 
         height: 50px;
@@ -1219,7 +1611,7 @@ footer {
 
 
     /* =====================================================
-       WORKS MOBILE
+       WORKS
     ===================================================== */
 
     .works-section {
@@ -1312,7 +1704,117 @@ footer {
     }
 
 
-    /* BUDGET */
+    /* =====================================================
+       BENEFITS
+    ===================================================== */
+
+    .benefits-section {
+        padding: 90px 20px 100px;
+    }
+
+    .benefits-heading {
+        display: block;
+
+        margin-bottom: 55px;
+    }
+
+    .benefits-heading .section-label {
+        margin-bottom: 35px;
+
+        padding-top: 0;
+    }
+
+    .benefits-heading h2 {
+        font-size: 58px;
+
+        line-height: 0.9;
+    }
+
+    .benefit-item {
+        grid-template-columns: 30px minmax(0, 1fr);
+
+        gap: 18px;
+
+        padding: 30px 0;
+    }
+
+    .benefit-item:hover {
+        padding-left: 0;
+    }
+
+    .benefit-number {
+        padding-top: 4px;
+
+        font-size: 9px;
+    }
+
+    .benefit-content {
+        display: block;
+    }
+
+    .benefit-content h3 {
+        margin-bottom: 15px;
+
+        font-size: 25px;
+
+        line-height: 1;
+
+        letter-spacing: -1px;
+    }
+
+    .benefit-content p {
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       REVIEWS
+    ===================================================== */
+
+    .reviews {
+        padding: 90px 20px 100px;
+    }
+
+    .section-title {
+        display: block;
+
+        margin-bottom: 50px;
+    }
+
+    .section-title .eyebrow {
+        margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+        font-size: 58px;
+
+        line-height: 0.9;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .review {
+        min-height: 300px;
+
+        padding: 25px;
+    }
+
+    .review p {
+        font-size: 23px;
+
+        line-height: 1.25;
+    }
+
+
+    /* =====================================================
+       BUDGET
+    ===================================================== */
 
     .budget-inner {
         padding: 75px 20px 80px;
@@ -1405,7 +1907,58 @@ footer {
     }
 
 
-    /* CONTACT */
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about {
+        padding: 90px 20px 100px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 50px;
+
+        align-items: stretch;
+    }
+
+    .about-image {
+        aspect-ratio: 4 / 5;
+
+        order: 1;
+    }
+
+    .about-text {
+        order: 2;
+
+        max-width: none;
+    }
+
+    .about-text .eyebrow {
+        margin-bottom: 20px;
+    }
+
+    .about-text h2 {
+        margin-bottom: 35px;
+
+        font-size: 58px;
+
+        line-height: 0.9;
+    }
+
+    .about-text p {
+        margin-bottom: 18px;
+
+        font-size: 15px;
+
+        line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
 
     .contact-inner {
         min-height: 650px;
@@ -1413,7 +1966,6 @@ footer {
         padding: 30px 20px 25px;
     }
 
-    .contact-number,
     .contact-label {
         font-size: 9px;
     }
@@ -1425,8 +1977,6 @@ footer {
     }
 
     .contact-content h2 {
-        display: block;
-
         width: 100%;
 
         margin-bottom: 22px;
@@ -1438,10 +1988,6 @@ footer {
         letter-spacing: -4px;
 
         white-space: normal;
-
-        word-break: normal;
-
-        writing-mode: horizontal-tb;
     }
 
     .contact-content p {
@@ -1451,11 +1997,7 @@ footer {
 
         font-size: 17px;
 
-        white-space: normal;
-
-        word-break: normal;
-
-        writing-mode: horizontal-tb;
+        line-height: 1.4;
     }
 
     .contact-button {
@@ -1473,20 +2015,25 @@ footer {
     }
 
 
-    /* FOOTER */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     footer {
         padding: 20px;
 
         font-size: 9px;
     }
+
 }
+
 
 /* =========================================================
    VERY SMALL PHONES
 ========================================================= */
 
 @media (max-width: 430px) {
+
 
     .hero {
         min-height: 650px;
@@ -1574,18 +2121,82 @@ footer {
         height: 125vw;
     }
 
-    .work-info {
-        padding-top: 12px;
 
-        margin-top: 10px;
+    /* BENEFITS */
+
+    .benefits-section {
+        padding: 75px 15px 90px;
     }
 
-    .work-info h3 {
-        font-size: 12px;
+    .benefits-heading {
+        margin-bottom: 40px;
     }
 
-    .work-type {
-        font-size: 9px;
+    .benefits-heading h2 {
+        font-size: 50px;
+    }
+
+    .benefit-item {
+        grid-template-columns: 25px minmax(0, 1fr);
+
+        gap: 12px;
+    }
+
+    .benefit-content h3 {
+        font-size: 22px;
+    }
+
+    .benefit-content p {
+        font-size: 13px;
+    }
+
+
+    /* REVIEWS */
+
+    .reviews {
+        padding: 75px 15px 90px;
+    }
+
+    .section-title h2 {
+        font-size: 50px;
+    }
+
+    .review {
+        min-height: 280px;
+
+        padding: 22px;
+    }
+
+    .review p {
+        font-size: 21px;
+    }
+
+
+    /* BUDGET */
+
+    .budget-inner {
+        padding: 70px 15px 75px;
+    }
+
+    .budget-heading h2 {
+        font-size: 40px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        padding: 75px 15px 90px;
+
+        gap: 40px;
+    }
+
+    .about-text h2 {
+        font-size: 50px;
+    }
+
+    .about-text p {
+        font-size: 14px;
     }
 
 
@@ -1606,4 +2217,5 @@ footer {
     .contact-content p {
         font-size: 15px;
     }
+
 }
