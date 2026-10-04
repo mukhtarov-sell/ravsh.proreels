@@ -489,30 +489,32 @@ textarea {
    BUDGET
 ========================================================= */
 
-/* =========================================================
-   BUDGET
-========================================================= */
-
 .budget-section {
     width: 100%;
+
     background: var(--black);
 }
 
 .budget-inner {
     width: 100%;
+
     padding: 120px 60px;
 }
 
-/* Заголовок секции */
+
+/* =========================================================
+   BUDGET HEADING
+========================================================= */
 
 .budget-heading {
-    margin-bottom: 45px;
+    margin-bottom: 55px;
 }
 
 .budget-eyebrow {
     margin-bottom: 18px;
 
     font-size: 11px;
+
     line-height: 1;
 
     letter-spacing: 2px;
@@ -532,176 +534,157 @@ textarea {
     color: var(--white);
 }
 
+
 /* =========================================================
-   ОСНОВНАЯ КАРТОЧКА
+   BUDGET LIST
+========================================================= */
+
+.budget-list {
+    width: 100%;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   BUDGET CARD
 ========================================================= */
 
 .budget-card {
-    position: relative;
-
     width: 100%;
 
-    min-height: 320px;
+    min-height: 170px;
 
-    padding: 45px;
+    padding: 35px 0;
 
     display: flex;
 
-    flex-direction: column;
+    align-items: center;
 
     justify-content: space-between;
 
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 50px;
 
-    background: #101010;
-
-    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 
     transition:
-        border-color 0.4s ease,
+        padding-left 0.4s ease,
         background 0.4s ease;
 }
 
 .budget-card:hover {
-    border-color: rgba(255, 255, 255, 0.45);
-
-    background: #131313;
+    padding-left: 20px;
 }
 
-/* Верхняя часть */
 
-.budget-card-top {
+/* =========================================================
+   LEFT PART
+========================================================= */
+
+.budget-card-main {
     display: flex;
-
-    justify-content: space-between;
 
     align-items: flex-start;
 
-    gap: 40px;
+    gap: 35px;
+
+    flex: 1;
 }
 
-.budget-card-title {
-    font-size: 13px;
+.budget-card-number {
+    padding-top: 5px;
 
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-    color: rgba(255, 255, 255, 0.5);
-}
-
-/* Описание */
-
-.budget-card-description {
-    max-width: 480px;
-
-    margin-top: 20px;
-
-    font-size: 18px;
-
-    line-height: 1.45;
-
-    color: rgba(255, 255, 255, 0.75);
-}
-
-/* Цена */
-
-.budget-card-price {
-    text-align: right;
-
-    white-space: nowrap;
-}
-
-.budget-card-price strong {
-    display: block;
-
-    font-size: clamp(42px, 5vw, 72px);
-
-    line-height: 0.9;
-
-    font-weight: 400;
-
-    letter-spacing: -4px;
-
-    color: var(--white);
-}
-
-.budget-card-price span {
-    display: block;
-
-    margin-top: 12px;
+    min-width: 30px;
 
     font-size: 11px;
 
     letter-spacing: 1px;
 
-    text-transform: uppercase;
-
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.3);
 }
 
-/* Нижняя часть */
-
-.budget-card-bottom {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: flex-end;
-
-    gap: 30px;
-
-    margin-top: 70px;
-
-    padding-top: 25px;
-
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+.budget-card-info {
+    max-width: 650px;
 }
 
-.budget-card-note {
-    font-size: 12px;
+.budget-card-info h3 {
+    margin-bottom: 12px;
 
-    color: rgba(255, 255, 255, 0.4);
-}
+    font-size: 28px;
 
-.budget-card-note strong {
-    color: rgba(255, 255, 255, 0.7);
+    line-height: 1;
 
     font-weight: 500;
-}
 
-/* Кнопка */
-
-.budget-card-button {
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 13px 22px;
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-    border-radius: 100px;
-
-    font-size: 12px;
+    letter-spacing: -1px;
 
     color: #fff;
-
-    transition:
-        background 0.3s ease,
-        color 0.3s ease,
-        border-color 0.3s ease;
 }
 
-.budget-card-button:hover {
-    background: #fff;
+.budget-card-info p {
+    max-width: 600px;
 
-    color: #000;
+    font-size: 15px;
 
-    border-color: #fff;
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.55);
 }
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+.budget-card-price {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 8px;
+
+    min-width: 220px;
+
+    justify-content: flex-end;
+
+    white-space: nowrap;
+
+    text-align: right;
+}
+
+.budget-card-price strong {
+    font-size: clamp(28px, 3vw, 44px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    letter-spacing: -2px;
+
+    color: #f5f5f3;
+}
+
+.budget-card-price span {
+    font-size: 11px;
+
+    color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.budget-note {
+    margin-top: 25px;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.3);
+}
+
 
 /* =========================================================
    BUDGET MOBILE
@@ -714,7 +697,7 @@ textarea {
     }
 
     .budget-heading {
-        margin-bottom: 30px;
+        margin-bottom: 35px;
     }
 
     .budget-eyebrow {
@@ -732,61 +715,67 @@ textarea {
     }
 
     .budget-card {
+        display: block;
+
         min-height: auto;
 
-        padding: 25px;
+        padding: 28px 0;
     }
 
-    .budget-card-top {
-        display: block;
+    .budget-card:hover {
+        padding-left: 0;
     }
 
-    .budget-card-title {
-        font-size: 11px;
+    .budget-card-main {
+        gap: 18px;
     }
 
-    .budget-card-description {
-        max-width: 100%;
+    .budget-card-number {
+        min-width: 22px;
 
-        margin-top: 15px;
+        padding-top: 4px;
 
-        font-size: 15px;
+        font-size: 9px;
+    }
+
+    .budget-card-info h3 {
+        margin-bottom: 10px;
+
+        font-size: 22px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .budget-card-info p {
+        font-size: 13px;
+
+        line-height: 1.45;
     }
 
     .budget-card-price {
-        margin-top: 45px;
+        margin-top: 25px;
+
+        min-width: auto;
+
+        justify-content: flex-start;
 
         text-align: left;
     }
 
     .budget-card-price strong {
-        font-size: 48px;
+        font-size: 32px;
 
-        letter-spacing: -3px;
+        letter-spacing: -1.5px;
     }
 
     .budget-card-price span {
-        margin-top: 8px;
-
-        font-size: 9px;
-    }
-
-    .budget-card-bottom {
-        display: block;
-
-        margin-top: 50px;
-
-        padding-top: 20px;
-    }
-
-    .budget-card-note {
-        margin-bottom: 20px;
-
         font-size: 10px;
     }
 
-    .budget-card-button {
-        width: 100%;
+    .budget-note {
+        margin-top: 20px;
+
+        font-size: 9px;
     }
 }
 /* =========================================================
