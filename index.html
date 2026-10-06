@@ -1266,13 +1266,20 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+    const hero = document.querySelector(".hero");
     const tabs = document.querySelectorAll(".hero-tab");
     const image = document.querySelector(".hero-hover-image");
+    const tabsContainer = document.querySelector(".hero-tabs");
 
-    if (!tabs.length || !image) {
+    if (!hero || !tabs.length || !image) {
         console.log("Hero elements not found");
         return;
     }
+
+
+    /* =====================================================
+       НАВЕДЕНИЕ НА ВКЛАДКУ
+    ===================================================== */
 
     tabs.forEach(function (tab) {
 
@@ -1282,15 +1289,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!imageUrl) return;
 
-            image.style.backgroundImage = 'url("' + imageUrl + '")';
+
+            /* Показываем фотографию */
+
+            image.style.backgroundImage =
+                'url("' + imageUrl + '")';
+
             image.classList.add("active");
+
+
+            /* Убираем текст с видео */
+
+            hero.classList.add("showcase");
+
+
+            /* Меняем активную вкладку */
 
             tabs.forEach(function (item) {
                 item.classList.remove("active");
             });
 
             tab.classList.add("active");
+
         });
+
+
+        /* =================================================
+           КЛИК ПО ВКЛАДКЕ
+        ================================================= */
 
         tab.addEventListener("click", function () {
 
@@ -1298,25 +1324,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (!imageUrl) return;
 
-            image.style.backgroundImage = 'url("' + imageUrl + '")';
+
+            image.style.backgroundImage =
+                'url("' + imageUrl + '")';
+
             image.classList.add("active");
+
+
+            hero.classList.add("showcase");
+
 
             tabs.forEach(function (item) {
                 item.classList.remove("active");
             });
 
             tab.classList.add("active");
+
         });
 
     });
 
-    const tabsContainer = document.querySelector(".hero-tabs");
+
+    /* =====================================================
+       УХОД МЫШИ С ВКЛАДОК
+       ВОЗВРАЩАЕМ ГЛАВНОЕ ВИДЕО И ТЕКСТ
+    ===================================================== */
 
     if (tabsContainer) {
 
         tabsContainer.addEventListener("mouseleave", function () {
 
             image.classList.remove("active");
+
+            hero.classList.remove("showcase");
+
 
             tabs.forEach(function (item) {
                 item.classList.remove("active");
