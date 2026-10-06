@@ -1271,7 +1271,71 @@
 ===================================================== -->
 
 <script src="./script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const tabs = document.querySelectorAll(".hero-tab");
+    const image = document.querySelector(".hero-hover-image");
+
+    if (!tabs.length || !image) {
+        console.log("Hero elements not found");
+        return;
+    }
+
+    tabs.forEach(function (tab) {
+
+        tab.addEventListener("mouseenter", function () {
+
+            const imageUrl = tab.getAttribute("data-image");
+
+            if (!imageUrl) return;
+
+            image.style.backgroundImage = 'url("' + imageUrl + '")';
+            image.classList.add("active");
+
+            tabs.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            tab.classList.add("active");
+        });
+
+        tab.addEventListener("click", function () {
+
+            const imageUrl = tab.getAttribute("data-image");
+
+            if (!imageUrl) return;
+
+            image.style.backgroundImage = 'url("' + imageUrl + '")';
+            image.classList.add("active");
+
+            tabs.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            tab.classList.add("active");
+        });
+
+    });
+
+    const tabsContainer = document.querySelector(".hero-tabs");
+
+    if (tabsContainer) {
+
+        tabsContainer.addEventListener("mouseleave", function () {
+
+            image.classList.remove("active");
+
+            tabs.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+        });
+
+    }
+
+});
+</script>
 
 </body>
 
