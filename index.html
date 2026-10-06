@@ -1278,6 +1278,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
+       ПОЯВЛЕНИЕ ТЕКСТА ПОСЛЕ ЗАГРУЗКИ
+    ===================================================== */
+
+    setTimeout(function () {
+        hero.classList.add("hero-ready");
+    }, 500);
+
+
+    /* =====================================================
        НАВЕДЕНИЕ НА ВКЛАДКУ
     ===================================================== */
 
@@ -1290,20 +1299,18 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!imageUrl) return;
 
 
-            /* Показываем фотографию */
-
             image.style.backgroundImage =
                 'url("' + imageUrl + '")';
 
             image.classList.add("active");
 
 
-            /* Убираем текст с видео */
+            /* Текст уходит вниз */
 
             hero.classList.add("showcase");
 
 
-            /* Меняем активную вкладку */
+            /* Активная вкладка */
 
             tabs.forEach(function (item) {
                 item.classList.remove("active");
@@ -1346,8 +1353,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       УХОД МЫШИ С ВКЛАДОК
-       ВОЗВРАЩАЕМ ГЛАВНОЕ ВИДЕО И ТЕКСТ
+       МЫШЬ УШЛА С ВКЛАДОК
     ===================================================== */
 
     if (tabsContainer) {
@@ -1369,7 +1375,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 </body>
 
 </html>
