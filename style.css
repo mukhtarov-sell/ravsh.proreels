@@ -1404,6 +1404,12 @@ footer a:hover {
 
 /* =========================================================
    MOBILE
+   ВАЖНО:
+   ВИДЕО
+   ↓
+   ТЕКСТ
+   ↓
+   ВКЛАДКИ
 ========================================================= */
 
 @media (max-width: 700px) {
@@ -1431,82 +1437,150 @@ footer a:hover {
 
 
     /* =====================================================
-       HERO
+       HERO — НОВАЯ МОБИЛЬНАЯ СТРУКТУРА
     ===================================================== */
 
     .hero {
-        height: 100svh;
-        min-height: 700px;
-    }
+        display: grid;
 
-    /*
-       Верхняя часть — видео.
-       Нижняя часть — текст.
-    */
+        grid-template-columns: 1fr;
 
-    .hero-video {
-        position: absolute;
-
-        top: 0;
-        left: 0;
+        grid-template-rows:
+            auto
+            auto
+            auto;
 
         width: 100%;
-        height: 52%;
 
-        object-fit: contain !important;
-        object-position: center center;
+        height: auto;
+
+        min-height: 0;
+
+        overflow: hidden;
 
         background: #111;
     }
 
-    .hero-hover-image {
-        position: absolute;
 
-        top: 0;
-        left: 0;
+    /* =====================================================
+       ВИДЕО — ПЕРВЫЙ БЛОК
+    ===================================================== */
+
+    .hero-video {
+        position: relative;
+
+        inset: auto;
+
+        grid-column: 1;
+        grid-row: 1;
+
+        display: block;
 
         width: 100%;
-        height: 52%;
+        height: auto;
 
-        background-size: contain !important;
+        aspect-ratio: 16 / 9;
+
+        object-fit: contain;
+
+        object-position: center center;
+
+        background: #111;
+
+        z-index: 1;
+    }
+
+
+    /* =====================================================
+       КАРТИНКА ВКЛАДКИ — ТОЖЕ В ЗОНЕ ВИДЕО
+    ===================================================== */
+
+    .hero-hover-image {
+        position: relative;
+
+        inset: auto;
+
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        background-size: contain;
+
         background-position: center center;
+
         background-repeat: no-repeat;
 
         background-color: #111;
+
+        z-index: 2;
     }
 
-    .hero-overlay {
-        top: 0;
-        left: 0;
 
-        height: 52%;
+    /* =====================================================
+       OVERLAY ТОЛЬКО НА ВИДЕО
+    ===================================================== */
+
+    .hero-overlay {
+        position: relative;
+
+        inset: auto;
+
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 100%;
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        z-index: 3;
 
         background:
             linear-gradient(
                 to bottom,
                 rgba(0, 0, 0, 0.10) 0%,
-                rgba(0, 0, 0, 0.05) 60%,
-                rgba(0, 0, 0, 0.45) 100%
+                rgba(0, 0, 0, 0.02) 55%,
+                rgba(0, 0, 0, 0.35) 100%
             );
     }
 
 
     /* =====================================================
-       HERO TEXT
+       HERO TEXT — ВТОРОЙ БЛОК
     ===================================================== */
 
     .hero-content {
-        left: 20px;
-        right: 20px;
+        position: relative;
 
-        top: 75%;
+        left: auto;
+        right: auto;
+        top: auto;
 
-        width: auto;
+        grid-column: 1;
+        grid-row: 2;
+
+        width: 100%;
+
         max-width: none;
 
-        transform:
-            translateY(-50%);
+        padding:
+            34px
+            20px
+            40px;
+
+        background: #111;
+
+        color: #fff;
+
+        z-index: 5;
+
+        transform: translateY(25px);
     }
+
 
     .eyebrow {
         margin-bottom: 14px;
@@ -1516,25 +1590,30 @@ footer a:hover {
         letter-spacing: 0.1em;
     }
 
+
     .hero h1 {
+        max-width: 100%;
+
         margin-bottom: 20px;
 
-        font-size: 34px;
+        font-size: 36px;
 
         line-height: 1;
 
-        letter-spacing: -1.3px;
+        letter-spacing: -1.5px;
     }
+
 
     .hero-description {
         max-width: 100%;
 
-        margin-bottom: 22px;
+        margin-bottom: 24px;
 
-        font-size: 13px;
+        font-size: 14px;
 
-        line-height: 1.35;
+        line-height: 1.4;
     }
+
 
     .button {
         padding: 14px 22px;
@@ -1544,33 +1623,65 @@ footer a:hover {
 
 
     /* =====================================================
-       HERO TABS
+       HERO TABS — ТРЕТИЙ БЛОК
     ===================================================== */
 
     .hero-tabs {
-        left: 20px;
-        right: 20px;
-        bottom: 0;
+        position: relative;
+
+        left: auto;
+        right: auto;
+        bottom: auto;
+
+        grid-column: 1;
+        grid-row: 3;
+
+        width: 100%;
+
+        padding:
+            0
+            20px;
+
+        background: #111;
+
+        z-index: 10;
 
         grid-template-columns:
             repeat(5, minmax(0, 1fr));
+
+        border-top:
+            1px solid var(--line);
     }
+
 
     .hero-tab {
+        min-width: 0;
+
         min-height: 85px;
 
-        padding: 12px 8px 10px 0;
+        padding:
+            12px
+            8px
+            10px
+            0;
+
+        opacity: 0.55;
     }
+
 
     .hero-tab:hover {
         padding-left: 0;
     }
 
+
     .tab-title {
         margin-bottom: 4px;
 
         font-size: 13px;
+
+        line-height: 1.2;
     }
+
 
     .tab-description {
         font-size: 8px;
@@ -1760,7 +1871,9 @@ footer a:hover {
     }
 
     .benefit-item {
-        grid-template-columns: 30px minmax(0, 1fr);
+        grid-template-columns:
+            30px
+            minmax(0, 1fr);
 
         gap: 18px;
 
@@ -2063,39 +2176,44 @@ footer a:hover {
 
 @media (max-width: 430px) {
 
+    /* =====================================================
+       HERO
+    ===================================================== */
+
     .hero {
-        min-height: 650px;
+        min-height: 0;
     }
 
     .hero-content {
-        top: 75%;
+        padding:
+            30px
+            15px
+            35px;
     }
 
-    .hero h1 {
-        font-size: 38px;
+    .hero-content h1 {
+        font-size: 34px !important;
 
-        letter-spacing: -1.8px;
+        line-height: 1 !important;
+
+        letter-spacing: -1.3px !important;
+
+        max-width: 100% !important;
     }
 
-    .hero-description {
-        font-size: 14px;
+    .hero-content .hero-description {
+        font-size: 13px !important;
+
+        max-width: 100% !important;
     }
 
-    .hero-video {
-        height: 52%;
-    }
-
-    .hero-hover-image {
-        height: 52%;
-    }
-
-    .hero-overlay {
-        height: 52%;
+    .hero-content .eyebrow {
+        font-size: 10px !important;
     }
 
     .hero-tabs {
-        left: 15px;
-        right: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
     .hero-tab {
@@ -2113,7 +2231,9 @@ footer a:hover {
     }
 
 
-    /* STATS */
+    /* =====================================================
+       STATS
+    ===================================================== */
 
     .stats-inner {
         padding: 22px 15px;
@@ -2134,7 +2254,9 @@ footer a:hover {
     }
 
 
-    /* WORKS */
+    /* =====================================================
+       WORKS
+    ===================================================== */
 
     .works-section {
         padding: 75px 15px 90px;
@@ -2162,7 +2284,9 @@ footer a:hover {
     }
 
 
-    /* BENEFITS */
+    /* =====================================================
+       BENEFITS
+    ===================================================== */
 
     .benefits-section {
         padding: 75px 15px 90px;
@@ -2177,7 +2301,9 @@ footer a:hover {
     }
 
     .benefit-item {
-        grid-template-columns: 25px minmax(0, 1fr);
+        grid-template-columns:
+            25px
+            minmax(0, 1fr);
 
         gap: 12px;
     }
@@ -2191,7 +2317,9 @@ footer a:hover {
     }
 
 
-    /* REVIEWS */
+    /* =====================================================
+       REVIEWS
+    ===================================================== */
 
     .reviews {
         padding: 75px 15px 90px;
@@ -2212,7 +2340,9 @@ footer a:hover {
     }
 
 
-    /* BUDGET */
+    /* =====================================================
+       BUDGET
+    ===================================================== */
 
     .budget-inner {
         padding: 70px 15px 75px;
@@ -2223,7 +2353,9 @@ footer a:hover {
     }
 
 
-    /* ABOUT */
+    /* =====================================================
+       ABOUT
+    ===================================================== */
 
     .about {
         padding: 75px 15px 90px;
@@ -2240,7 +2372,9 @@ footer a:hover {
     }
 
 
-    /* CONTACT */
+    /* =====================================================
+       CONTACT
+    ===================================================== */
 
     .contact-inner {
         min-height: 600px;
@@ -2267,19 +2401,25 @@ footer a:hover {
 
 .hero-content h1 {
     font-size: clamp(38px, 5vw, 64px) !important;
+
     line-height: 0.98 !important;
+
     max-width: 800px !important;
+
     letter-spacing: -2px !important;
 }
 
 .hero-content .hero-description {
     font-size: clamp(14px, 1.4vw, 18px) !important;
+
     line-height: 1.4 !important;
+
     max-width: 500px !important;
 }
 
 .hero-content .eyebrow {
     font-size: 12px !important;
+
     letter-spacing: 0.12em !important;
 }
 
@@ -2288,35 +2428,26 @@ footer a:hover {
 
     .hero-content h1 {
         font-size: 36px !important;
+
         line-height: 1 !important;
+
         max-width: 90% !important;
+
         letter-spacing: -1.5px !important;
     }
 
     .hero-content .hero-description {
         font-size: 14px !important;
+
         line-height: 1.35 !important;
+
         max-width: 90% !important;
     }
 
     .hero-content .eyebrow {
         font-size: 10px !important;
+
         letter-spacing: 0.1em !important;
-    }
-
-}
-
-
-@media (max-width: 430px) {
-
-    .hero-content h1 {
-        font-size: 34px !important;
-        line-height: 1 !important;
-        letter-spacing: -1.3px !important;
-    }
-
-    .hero-content .hero-description {
-        font-size: 13px !important;
     }
 
 }
@@ -2397,7 +2528,7 @@ footer a:hover {
 
 
 /* =========================================================
-   ТЕКСТ ПОЯВИЛСЯ
+   ТЕКСТ ПОЯВИЛСЯ — DESKTOP
 ========================================================= */
 
 .hero.hero-ready .hero-content {
@@ -2421,7 +2552,7 @@ footer a:hover {
 
 
 /* =========================================================
-   ПРИ ПЕРЕХОДЕ НА ВКЛАДКУ
+   ПРИ ПЕРЕХОДЕ НА ВКЛАДКУ — DESKTOP
 ========================================================= */
 
 .hero.showcase .hero-content {
@@ -2463,26 +2594,65 @@ footer a:hover {
 @media (max-width: 700px) {
 
     .hero-content {
-        top: 75%;
+        position: relative;
+
+        top: auto;
+        left: auto;
+        right: auto;
 
         transform:
-            translateY(calc(-50% + 25px));
+            translateY(25px);
 
         transition:
             opacity 0.5s ease,
             transform 0.5s cubic-bezier(.2, .7, .2, 1);
     }
 
+
     .hero.hero-ready .hero-content {
         transform:
-            translateY(-50%);
+            translateY(0);
     }
+
 
     .hero.showcase .hero-content {
         transform:
-            translateY(calc(-50% + 25px)) !important;
+            translateY(25px) !important;
 
         opacity: 0 !important;
+
+        pointer-events: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE — НЕ ПОЗВОЛЯЕМ DESKTOP TRANSFORM
+   ПЕРЕЗАПИСАТЬ МОБИЛЬНУЮ КОМПОНОВКУ
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero-content {
+        width: 100%;
+
+        max-width: none;
+
+        margin: 0;
+
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+
+@media (max-width: 430px) {
+
+    .hero-content {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
 }
