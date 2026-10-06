@@ -461,47 +461,58 @@ section:not(.hero) {
     color: #fff;
 }
 
+/* =========================================================
+   WORKS HEADING
+========================================================= */
+
 .works-heading {
     display: flex;
 
-    justify-content: space-between;
+    flex-direction: column;
 
-    align-items: flex-start;
+    align-items: center;
+
+    text-align: center;
 
     margin-bottom: 80px;
 }
 
-.works-heading > div {
-    display: flex;
 
-    align-items: center;
+/* БОЛЬШОЙ ЗАГОЛОВОК */
 
-    gap: 20px;
-}
-
-.section-label {
+.works-title {
     display: block;
 
-    font-size: 11px;
-
-    letter-spacing: 0.12em;
-
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.works-heading h2 {
-    margin: 0;
-
-    max-width: 600px;
-
-    font-size:
-        clamp(50px, 7vw, 110px);
+    font-size: clamp(70px, 11vw, 170px);
 
     line-height: 0.9;
 
     font-weight: 400;
 
-    letter-spacing: -0.055em;
+    letter-spacing: -0.06em;
+
+    color: #fff;
+
+    margin-bottom: 25px;
+}
+
+
+/* МАЛЕНЬКИЙ ПОДЗАГОЛОВОК */
+
+.works-heading h2 {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+    font-weight: 400;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.5);
 }
 
 
